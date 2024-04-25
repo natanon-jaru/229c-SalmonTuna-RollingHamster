@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] Transform shootPoint;
+    [SerializeField] Transform PlayerPoint;
     [SerializeField] GameObject target;
     [SerializeField] Rigidbody2D bulletPrefab;
 
@@ -29,10 +29,11 @@ public class Projectile : MonoBehaviour
                 target.transform.position = new Vector2(hit.point.x, hit.point.y);
                 Debug.Log($"hit point : {hit.point.x}, {hit.point.y}");
 
-                Vector2 projectile = CalculateProjectileVelocity(shootPoint.position,hit.point,1f);
+                Vector2 projectile = CalculateProjectileVelocity(PlayerPoint.position,hit.point,1f);
 
-                Rigidbody2D firebullet = Instantiate(bulletPrefab, shootPoint.position,Quaternion.identity);
-                firebullet.velocity = projectile;
+                //Rigidbody2D jump = (PlayerPoint.position)
+                // Rigidbody2D firebullet = Instantiate(bulletPrefab, PlayerPoint.position,Quaternion.identity);
+                // firebullet.velocity = projectile;
             }
 
         }
