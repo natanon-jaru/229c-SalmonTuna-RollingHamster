@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Point
   - PoisonFood
+  - Trap
   layers:
   - Default
   - TransparentFX

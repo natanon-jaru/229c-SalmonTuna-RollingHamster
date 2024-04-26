@@ -42,5 +42,13 @@ public class Score : MonoBehaviour
             Destroy(Point.gameObject);//destroy when the player touches the coin
             Livenumber.text = "LIVE : " + Livenum;
         }
+
+        // if (Point.tag == "Trap")
+        // {
+        //     Livenum--;
+        //     Destroy(Point.gameObject);
+        //     Livenumber.text = "LIVE : " + Livenum;
+        //     
+        // }
     }
 }

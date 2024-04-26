@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -38,24 +40,24 @@ public class Player : MonoBehaviour
         rb2d.AddForce(move * speed * Time.deltaTime);
     }
     
-    // private void OnCollisionEnter2D(Collision2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Ground"))
-    //     {
-    //         isJumping = true;
-    //     }
-    //     
-    //     if (other.gameObject.CompareTag("DeathGround"))
-    //     {
-    //         
-    //     }
-    // }
-    //
-    // private void OnCollisionExit2D(Collision2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Ground"))
-    //     {
-    //         isJumping = false;
-    //     }
-    // }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = true;
+        }
+        
+        if (other.gameObject.CompareTag("DeathGround"))
+        {
+            SceneManager.LoadScene("Test");
+        }
+    }
+    
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
+    }
 }
