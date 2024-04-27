@@ -8,8 +8,9 @@ public class Movement : MonoBehaviour
    [SerializeField] Rigidbody2D rb;
    [SerializeField] Transform PlayerPoint;
    [SerializeField] GameObject target;
+   [SerializeField] GameObject cursor;
 
-   private bool hasJumped = false;
+    public static bool hasJumped = false;
    
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,10 @@ public class Movement : MonoBehaviour
             if (hit.collider != null)
             {
                 target.transform.position = new Vector2(hit.point.x, hit.point.y);
+                
+                Vector2 newdir = new Vector2(hit.point.x, hit.point.y);
+                Instantiate(cursor, newdir,Quaternion.identity);
+                
                 //Debug.Log($"hit point : {hit.point.x}, {hit.point.y}");
                 
                 Vector2 move = CalculateProjectileVelocity(PlayerPoint.position, target.transform.position, 1f);
@@ -58,7 +63,9 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            //Destroy(cursor);
             hasJumped = false;
+            
         }
         if (collision.gameObject.CompareTag("DeathGround"))
         {

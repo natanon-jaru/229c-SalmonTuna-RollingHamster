@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Score : MonoBehaviour
     public Text Scorenumber;
     private int Scorenum;
     private int Livenum;
+
+    [SerializeField] Scene thisScene;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,10 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Livenum <= 0)
+        {
+            SceneManager.LoadScene("Test");
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D Point)
