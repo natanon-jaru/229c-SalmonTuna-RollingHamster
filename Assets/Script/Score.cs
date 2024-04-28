@@ -12,15 +12,15 @@ public class Score : MonoBehaviour
     public Text Scorenumber;
     private int Scorenum;
     private int Livenum;
-
-    [SerializeField] Scene thisScene;
+    [SerializeField] private GameObject lastFloor;
+   
     
     // Start is called before the first frame update
     void Start()
     {
         Scorenum = 0;
         Livenum = 3;
-        Scorenumber.text = "SCORE : " + Scorenum;
+        Scorenumber.text = "FOOD : " + Scorenum;
         Livenumber.text = "LIVE : " + Livenum;
     }
 
@@ -29,7 +29,12 @@ public class Score : MonoBehaviour
     {
         if (Livenum <= 0)
         {
-            SceneManager.LoadScene("Test");
+            SceneManager.LoadScene("Gameplay");
+        }
+
+        if (Scorenum >=5)
+        {
+            Destroy(lastFloor);
         }
     }
     
@@ -39,7 +44,7 @@ public class Score : MonoBehaviour
         {
             Scorenum++;
             Destroy(Point.gameObject);//destroy when the player touches the coin
-            Scorenumber.text = "SCORE : " + Scorenum;
+            Scorenumber.text = "FOOD : " + Scorenum;
         }
         
         if (Point.tag == "PoisonFood")
@@ -48,13 +53,7 @@ public class Score : MonoBehaviour
             Destroy(Point.gameObject);//destroy when the player touches the coin
             Livenumber.text = "LIVE : " + Livenum;
         }
-
-        // if (Point.tag == "Trap")
-        // {
-        //     Livenum--;
-        //     Destroy(Point.gameObject);
-        //     Livenumber.text = "LIVE : " + Livenum;
-        //     
-        // }
+        
     }
+
 }

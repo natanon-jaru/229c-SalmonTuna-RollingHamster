@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        restartroom();
+        menu();
         
         if (!hasJumped &&Input.GetMouseButtonDown(0))
         {
@@ -63,13 +65,33 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            //Destroy(cursor);
             hasJumped = false;
             
         }
         if (collision.gameObject.CompareTag("DeathGround"))
         {
-            SceneManager.LoadScene("Test");
+            SceneManager.LoadScene("Gameplay");
+        }
+        
+        if (collision.gameObject.CompareTag("Win"))
+        {
+            SceneManager.LoadScene("Win");
+        }
+    }
+
+    void restartroom()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Gameplay");
+        }
+    }
+
+    void menu()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
     

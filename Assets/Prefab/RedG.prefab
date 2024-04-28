@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3152967693426421141}
   m_Layer: 0
   m_Name: Terrain (16x16)_95
-  m_TagString: DeathGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7857402789384893955}
   m_Layer: 0
   m_Name: RedG
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 2143476584082735275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4822539, y: 2.2379313, z: 0.09217911}
+  m_LocalPosition: {x: -1.4822539, y: 2.2379313, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 7476170995630668019}
   m_Layer: 0
   m_Name: Terrain (16x16)_94
-  m_TagString: DeathGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 3452426832347136500}
   m_Layer: 0
   m_Name: Terrain (16x16)_93
-  m_TagString: DeathGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

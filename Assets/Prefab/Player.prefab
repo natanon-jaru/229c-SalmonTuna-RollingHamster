@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3a1473c646aebd74da187b12915f5a85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   rb: {fileID: 7672057590397495617}
   PlayerPoint: {fileID: 4509578008424390379}
   target: {fileID: 0}
+  cursor: {fileID: 0}
 --- !u!114 &6429054402476999851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Livenumber: {fileID: 0}
   Scorenumber: {fileID: 0}
+  lastFloor: {fileID: 0}
 --- !u!1 &2985378400921149442
 GameObject:
   m_ObjectHideFlags: 0
