@@ -7,13 +7,16 @@ public class Mainmenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Gameplay");
     }
 
     public void Menu()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Menu");
     }
 
-   
+    public void Credit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
 }
